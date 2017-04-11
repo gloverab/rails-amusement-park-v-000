@@ -1,0 +1,13 @@
+<nav>
+  <% if logged_in? %>
+    <ul>
+      <%= "ADMIN" if current_user.admin %>
+      <li><%= link_to "" %></li>
+      <li><%= link_to "Log Out", '/logout' %></li>
+      <li><%= link_to "See attractions", '/attractions' %></li>
+    </ul>
+  <% else %>
+    <li><%= link_to "Sign Up", 'users/new' %></li>
+    <li><%= link_to "Sign In", '/signin' %></li>
+  <% end %>
+</nav>

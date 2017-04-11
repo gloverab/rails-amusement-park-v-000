@@ -1,0 +1,8 @@
+<h1><%= @attraction.name %></h1>
+<% if !current_user.admin %>
+  <%= button_to "Go on this ride", '/rides/new',
+  params: {attraction_id: @attraction.id,
+  user_id: session[:user_id]}%>
+<% else %>
+  <%= link_to "Edit Attraction", "/attractions/#{@attraction.id}/edit" %>
+<% end %>
